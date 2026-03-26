@@ -1,9 +1,11 @@
-import { Inter } from 'next/font/google';
+import { Inter, Playfair_Display } from 'next/font/google';
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({ subsets: ["latin"], variable: '--font-inter' });
+const playfair = Playfair_Display({ subsets: ["latin"], variable: '--font-playfair' });
 
 export const metadata = {
+  metadataBase: new URL('https://athenacapital.com'),
   title: "Athena Capital | Commercial Real Estate Capital Advisory",
   description: "We help owners, investors, and operators secure smart, reliable capital for commercial real estate—across the full lifecycle of a deal.",
   openGraph: {
@@ -22,8 +24,8 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
+    <html lang="en" className={`${inter.variable} ${playfair.variable}`}>
+      <body>{children}</body>
     </html>
   );
 }

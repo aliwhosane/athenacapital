@@ -1,5 +1,6 @@
 "use client";
 import FadeIn from './FadeIn';
+import { motion } from 'framer-motion';
 
 export default function Approach() {
     const steps = [
@@ -22,83 +23,85 @@ export default function Approach() {
 
     return (
         <section id="approach" className="section" style={{
-            backgroundColor: 'var(--charcoal-grey)',
-            color: 'var(--white)',
+            backgroundColor: 'var(--bg-color)',
             position: 'relative',
             overflow: 'hidden'
         }}>
             {/* Decorative Background Element */}
             <div style={{
-                position: 'absolute',
-                top: '-10%',
-                right: '-5%',
-                width: '600px',
-                height: '600px',
-                background: 'radial-gradient(circle, rgba(232, 117, 42, 0.1) 0%, rgba(43, 46, 52, 0) 70%)',
-                zIndex: 0,
+                position: 'absolute', top: 0, left: 0, width: '100%', height: '100%',
+                background: 'var(--approach-gradient)',
                 pointerEvents: 'none'
-            }}></div>
+            }} />
 
             <div className="container" style={{ position: 'relative', zIndex: 1 }}>
                 <FadeIn>
                     <h2 style={{
-                        fontSize: '3rem',
-                        marginBottom: '5rem',
+                        fontSize: 'clamp(2rem, 4vw, 3rem)',
+                        marginBottom: '1.5rem',
                         textAlign: 'center',
-                        background: 'linear-gradient(to right, #fff, #F2F3F5)',
-                        WebkitBackgroundClip: 'text',
-                        WebkitTextFillColor: 'transparent',
-                        letterSpacing: '-0.02em'
+                        color: 'var(--text-primary)',
+                        letterSpacing: '0.02em',
+                        fontFamily: 'var(--font-playfair)'
                     }}>
                         Our Approach
                     </h2>
                 </FadeIn>
+                <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '5rem' }}>
+                    <motion.div 
+                        initial={{ width: 0 }}
+                        whileInView={{ width: '80px' }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 1, ease: 'easeOut' }}
+                        style={{ height: '2px', backgroundColor: 'var(--athena-orange-primary)' }} 
+                    />
+                </div>
 
                 <div style={{
                     display: 'grid',
-                    gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
-                    gap: '3rem'
+                    gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 320px), 1fr))',
+                    gap: '2rem',
                 }}>
                     {steps.map((step, index) => (
                         <FadeIn key={index} delay={index * 0.2}>
                             <div style={{
-                                padding: '3rem 2rem',
-                                backgroundColor: 'rgba(255, 255, 255, 0.03)',
-                                borderRadius: '16px',
-                                border: '1px solid rgba(255, 255, 255, 0.05)',
+                                padding: '3rem',
+                                backgroundColor: 'var(--bg-glass-light)',
+                                borderRadius: '0',
+                                border: '1px solid var(--border-subtle)',
                                 backdropFilter: 'blur(10px)',
-                                transition: 'transform 0.3s ease, background-color 0.3s ease',
                                 height: '100%',
                                 display: 'flex',
                                 flexDirection: 'column',
-                                alignItems: 'flex-start'
+                                alignItems: 'flex-start',
+                                position: 'relative'
                             }}
                                 className="approach-card"
                             >
                                 <div style={{
-                                    fontSize: '1.2rem',
-                                    fontWeight: '700',
-                                    color: 'var(--charcoal-grey)',
-                                    backgroundColor: 'var(--athena-orange)',
-                                    width: '50px',
-                                    height: '50px',
+                                    fontSize: '0.9rem',
+                                    fontFamily: 'var(--font-inter)',
+                                    fontWeight: '500',
+                                    color: 'var(--bg-color)',
+                                    backgroundColor: 'var(--athena-orange-primary)',
+                                    width: '40px',
+                                    height: '40px',
                                     borderRadius: '50%',
                                     display: 'flex',
                                     alignItems: 'center',
                                     justifyContent: 'center',
-                                    marginBottom: '2rem',
-                                    boxShadow: '0 4px 15px rgba(232, 117, 42, 0.3)'
+                                    marginBottom: '2.5rem',
+                                    boxShadow: '0 4px 15px rgba(226, 109, 43, 0.2)'
                                 }}>
                                     {step.number}
                                 </div>
-                                <h3 style={{ fontSize: '1.75rem', marginBottom: '1.5rem', fontWeight: '600', color: 'var(--athena-orange)' }}>
+                                <h3 style={{ fontSize: '1.6rem', marginBottom: '1.5rem', fontFamily: 'var(--font-playfair)', color: 'var(--athena-orange-light)' }}>
                                     {step.title}
                                 </h3>
                                 <p style={{
-                                    fontSize: '1.1rem',
-                                    color: 'var(--white)',
-                                    lineHeight: '1.7',
-                                    opacity: 1 // Full opacity for maximum contrast
+                                    fontSize: '1rem',
+                                    color: 'var(--text-secondary)',
+                                    lineHeight: '1.8'
                                 }}>
                                     {step.description}
                                 </p>
@@ -107,11 +110,6 @@ export default function Approach() {
                     ))}
                 </div>
             </div>
-
-            {/* Styles for hover effect would typically go in globals.css, but inline style override is tricky for hover. 
-          Assuming user is okay with basic static styles or I can add a class. 
-          I will add a class 'approach-card' in globals.css for hover state if needed.
-      */}
         </section>
     );
 }
