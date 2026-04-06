@@ -16,10 +16,10 @@ export default function Footer() {
                             </p>
                             <div style={{ marginBottom: '2.5rem' }}>
                                 <p style={{ marginBottom: '0.8rem', fontWeight: '500', color: 'var(--text-primary)', textTransform: 'uppercase', letterSpacing: '0.05em', fontSize: '0.85rem' }}>Contact us:</p>
-                                <a href="mailto:info@AthenaCapitalre.com" style={{ display: 'block', marginBottom: '0.5rem', color: 'var(--text-secondary)', transition: 'color 0.3s ease' }}>[Email Address]</a>
-                                <a href="tel:+12145550100" style={{ display: 'block', color: 'var(--text-secondary)', transition: 'color 0.3s ease' }}>[Phone Number]</a>
+                                <p style={{ marginBottom: '0.3rem', color: 'var(--text-primary)', fontWeight: '500' }}>Mikel Keeler</p>
+                                <a href="tel:+14698448024" style={{ display: 'block', marginBottom: '0.5rem', color: 'var(--text-secondary)', transition: 'color 0.3s ease' }}>469-844-8024</a>
                             </div>
-                            <a href="#" className="btn btn-primary">Request a confidential consultation</a>
+                            <a href="mailto:MKeeler@AthenaCapitalre.com" className="btn btn-primary">Request a confidential consultation</a>
                         </div>
                     </FadeIn>
 
@@ -29,7 +29,7 @@ export default function Footer() {
                             <h3 style={{ fontSize: '1.5rem', marginBottom: '1.5rem', fontFamily: 'var(--font-playfair)' }}>Join our Team</h3>
                             <p style={{ marginBottom: '2rem', color: 'var(--text-secondary)', lineHeight: 1.8 }}>
                                 We are always looking for more great people to join our team. Please send a resume to:<br />
-                                <a href="mailto:careers@AthenaCapitalre.com" style={{ color: 'var(--athena-orange-primary)', marginTop: '0.5rem', display: 'inline-block' }}>careers@AthenaCapitalre.com</a>
+                                <a href="mailto:MKeeler@AthenaCapitalre.com" style={{ color: 'var(--athena-orange-primary)', marginTop: '0.5rem', display: 'inline-block' }}>MKeeler@AthenaCapitalre.com</a>
                             </p>
 
                             <h4 style={{ fontSize: '1.2rem', marginBottom: '1rem', marginTop: '3rem', fontFamily: 'var(--font-playfair)' }}>Location</h4>
